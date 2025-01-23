@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 class="page-title">Rolador de Dados</h1> -->
+
+    <section class="features-container">
+        <!-- Opções de Customização para o Usuário -->
+        <section class="options-section">
+            <!-- <div class="section-title">Opções</div> -->
+
+            <!-- Customização de cores e tema -->
+            <section class="theme-options">
+                <!-- Seleção de Cor -->
+                <div class="theme-color">
+                    <input type="radio" name="color" class="color-option" id="laranja">
+                    <input type="radio" name="color" class="color-option" id="rosa" checked>
+                    <input type="radio" name="color" class="color-option" id="roxo">
+                    <input type="radio" name="color" class="color-option" id="verde">
+                </div>
+
+                <!-- Seleção de Tema -->
+                <div class="theme-page">
+                    <input type="radio" name="theme" class="pagetheme-option" id="light" checked>
+                    <input type="radio" name="theme" class="pagetheme-option" id="dark">
+                </div>
+            </section>
+
+            <!-- Customização da Rolagem de Dados -->
+            <section class="dice-options">
+                <!-- Definir quantidade de dados -->
+                <div class="slider-container">
+                    <h4 class="slider-title">Quantidade de Dados</h4>
+                    <div class="slider-input-output">
+                        <input type="range" class="slider-input" id="diceNumInput" min="1" max="9" step="1" value="1">
+                        <span class="slider-count-display" id="diceNumDisplay">1</span>
+                    </div>
+                </div>
+                
+                <!-- Definir tipo dos dados -->
+                <div class="slider-container">
+                    <h4 class="slider-title">Quantidade de Faces</h4>
+                    <div class="slider-input-output">
+                        <input type="range" class="slider-input" id="diceTypeInput" min="10" max="70" step="10" value="60">
+                        <span class="slider-count-display" id="diceTypeDisplay">20</span>
+                    </div>
+                </div>
+
+                <!-- Definir modificador de rolagem -->
+                <div class="slider-container">
+                    <h4 class="slider-title">Modificador</h4>
+                    <div class="slider-input-output">
+                        <input type="range" class="slider-input" id="rollModInput" min="-20" max="20" step="1">
+                        <span class="slider-count-display" id="rollModDisplay">0</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="roll-info">
+                <h4 class="roll-alert-text">
+                    Clique para rolar <span id="rollInfo-Mod">1d20 + 0 </span>
+                </h4>
+
+                <button id="rollDices">Rolar Dados</button>
+            </section>
+
+        </section>
+
+        <section class="results-section">
+            <!-- <div class="section-title">Resultados</div> -->
+             <div class="display-types">
+                <input type="radio" name="display-type" id="menorRes" class="display-types-option">
+                <label for="menorRes"> Menor </label>
+
+                <input type="radio" name="display-type" id="somaRes" class="display-types-option" checked>
+                <label for="somaRes"> Soma </label>
+                
+                <input type="radio" name="display-type" id="maiorRes" class="display-types-option">
+                <label for="maiorRes"> Maior </label>
+             </div>
+
+            <div class="dice-display-container">
+                <div class="dice-display">
+                    <h2 id="dice-result-display">4</h2>
+                </div>
+            </div>
+
+            <div class="roll-results">
+                <span id="rollInfo"> 1d20 -> </span> <p id="rollResults">4, 6, 10</p>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <div class="section-title">Histórico</div>
+        </section>
+    </section>
+</body>
+</html>
