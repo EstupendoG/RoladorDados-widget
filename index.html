@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="components/style.css">
+    <title>Rola Dados</title>
+    <style>
+        :root{
+            --colorHL: var(--rosa)
+        }
+
+
+    </style>
 </head>
 <body>
     <!-- <h1 class="page-title">Rolador de Dados</h1> -->
@@ -19,16 +26,16 @@
             <section class="theme-options">
                 <!-- Seleção de Cor -->
                 <div class="theme-color">
-                    <input type="radio" name="color" class="color-option" id="laranja">
-                    <input type="radio" name="color" class="color-option" id="rosa" checked>
-                    <input type="radio" name="color" class="color-option" id="roxo">
-                    <input type="radio" name="color" class="color-option" id="verde">
+                    <input type="radio" name="color" class="color-option" id="laranja" value="laranja">
+                    <input type="radio" name="color" class="color-option" id="rosa" value="rosa" checked>
+                    <input type="radio" name="color" class="color-option" id="roxo" value="roxo">
+                    <input type="radio" name="color" class="color-option" id="verde" value="verde">
                 </div>
 
                 <!-- Seleção de Tema -->
                 <div class="theme-page">
-                    <input type="radio" name="theme" class="pagetheme-option" id="light" checked>
-                    <input type="radio" name="theme" class="pagetheme-option" id="dark">
+                    <input type="radio" name="theme" class="pagetheme-option" id="light" value="light" checked>
+                    <input type="radio" name="theme" class="pagetheme-option" id="dark" value="dark">
                 </div>
             </section>
 
@@ -38,7 +45,7 @@
                 <div class="slider-container">
                     <h4 class="slider-title">Quantidade de Dados</h4>
                     <div class="slider-input-output">
-                        <input type="range" class="slider-input" id="diceNumInput" min="1" max="9" step="1" value="1">
+                        <input type="range" class="slider-input" id="diceNumInput" min="1" max="10" step="1" value="1">
                         <span class="slider-count-display" id="diceNumDisplay">1</span>
                     </div>
                 </div>
@@ -47,7 +54,7 @@
                 <div class="slider-container">
                     <h4 class="slider-title">Quantidade de Faces</h4>
                     <div class="slider-input-output">
-                        <input type="range" class="slider-input" id="diceTypeInput" min="10" max="70" step="10" value="60">
+                        <input type="range" class="slider-input" id="diceTypeInput" min="1" max="7" step="1" value="6">
                         <span class="slider-count-display" id="diceTypeDisplay">20</span>
                     </div>
                 </div>
@@ -56,7 +63,7 @@
                 <div class="slider-container">
                     <h4 class="slider-title">Modificador</h4>
                     <div class="slider-input-output">
-                        <input type="range" class="slider-input" id="rollModInput" min="-20" max="20" step="1">
+                        <input type="range" class="slider-input" id="rollModInput" min="-10" max="10" step="1">
                         <span class="slider-count-display" id="rollModDisplay">0</span>
                     </div>
                 </div>
@@ -65,7 +72,7 @@
 
             <section class="roll-info">
                 <h4 class="roll-alert-text">
-                    Clique para rolar <span id="rollInfo-Mod">1d20 + 0 </span>
+                    Clique para rolar <span id="rollInfo-Mod">1d20</span>
                 </h4>
 
                 <button id="rollDices">Rolar Dados</button>
@@ -73,27 +80,32 @@
 
         </section>
 
+        <!-- Seção de Resultados da Rolagem -->
         <section class="results-section">
             <!-- <div class="section-title">Resultados</div> -->
-             <div class="display-types">
+            
+            <!-- Seleção do tipo de exibição do resultado -->
+            <div class="display-types">
                 <input type="radio" name="display-type" id="menorRes" class="display-types-option">
-                <label for="menorRes"> Menor </label>
+                <label for="menorRes" class="display-types-label"> Menor </label>
 
                 <input type="radio" name="display-type" id="somaRes" class="display-types-option" checked>
-                <label for="somaRes"> Soma </label>
+                <label for="somaRes" class="display-types-label"> Soma </label>
                 
                 <input type="radio" name="display-type" id="maiorRes" class="display-types-option">
-                <label for="maiorRes"> Maior </label>
-             </div>
+                <label for="maiorRes" class="display-types-label"> Maior </label>
+            </div>
 
+             <!-- Dado :0 -->
             <div class="dice-display-container">
-                <div class="dice-display">
+                <div id="dice-display">
                     <h2 id="dice-result-display">4</h2>
                 </div>
             </div>
 
+            <!-- Display de todos os resultados da rolagem -->
             <div class="roll-results">
-                <span id="rollInfo"> 1d20 -> </span> <p id="rollResults">4, 6, 10</p>
+                <span id="rollInfo"> 1d20 --> </span> <p id="rollResults">4 6 10</p>
             </div>
         </section>
 
@@ -101,5 +113,9 @@
             <div class="section-title">Histórico</div>
         </section>
     </section>
+
+    <script src="components/script.js"></script>
+    <script src="components/interface.js"></script>
+
 </body>
 </html>
