@@ -86,26 +86,27 @@
             
             <!-- Seleção do tipo de exibição do resultado -->
             <div class="display-types">
-                <input type="radio" name="display-type" id="menorRes" class="display-types-option">
+                <input type="radio" name="display-type" id="menorRes" class="display-types-option" value="1">
                 <label for="menorRes" class="display-types-label"> Menor </label>
 
-                <input type="radio" name="display-type" id="somaRes" class="display-types-option" checked>
+                <input type="radio" name="display-type" id="somaRes" class="display-types-option" value="2" checked>
                 <label for="somaRes" class="display-types-label"> Soma </label>
                 
-                <input type="radio" name="display-type" id="maiorRes" class="display-types-option">
+                <input type="radio" name="display-type" id="maiorRes" class="display-types-option" value="3">
                 <label for="maiorRes" class="display-types-label"> Maior </label>
             </div>
 
              <!-- Dado :0 -->
             <div class="dice-display-container">
                 <div id="dice-display">
-                    <h2 id="dice-result-display">4</h2>
+                    <h2 id="dice-result-display">0</h2>
                 </div>
             </div>
 
             <!-- Display de todos os resultados da rolagem -->
             <div class="roll-results">
-                <span id="rollInfo"> 1d20 --> </span> <p id="rollResults">4 6 10</p>
+                <span id="rollInfo"> 1d20 </span> <p id="rollResults"> </p>
+                <audio src="assets/sounds/dice-roll.mp3" id="dicesSfx"></audio>
             </div>
         </section>
 

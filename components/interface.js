@@ -2,9 +2,9 @@
 let html = document.documentElement
 
 
+
 // TROCAR TEMA DA PÁGINA
 let themeOptions = document.querySelectorAll("input[name='theme'].pagetheme-option") //Input's radio com a opção dos temas
-
 //Adiciona um eventlistener para cada opção de tema
 themeOptions.forEach(option =>{
     option.addEventListener("input" , () => {
@@ -13,9 +13,10 @@ themeOptions.forEach(option =>{
     })
 })
 
+
+
 // TROCAR COR DA PÁGINA
 let colorOptions = document.querySelectorAll("input[name='color'].color-option") //Input's radio com a opção das cores
-
 //Adiciona um eventlistener para cada opção de tema
 colorOptions.forEach(option => {
     option.addEventListener("input" , () =>{
@@ -23,6 +24,8 @@ colorOptions.forEach(option => {
         html.style.setProperty("--colorHL" , `var(--${option.value})`)
     })
 });
+
+
 
 let diceDisplay = document.querySelector("#dice-display")
 function changeDiceDisplay(diceType) {
@@ -43,7 +46,7 @@ function changeDiceDisplay(diceType) {
             diceDisplay.style.setProperty("clip-path" , "polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%)")
             break
         case 6:
-            diceDisplay.style.setProperty("clip-path" , "polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)")
+            diceDisplay.style.setProperty("clip-path" , "polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%)")
             break
         case 7:
             diceDisplay.style.setProperty("clip-path" , "circle(50%)")

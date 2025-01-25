@@ -1,4 +1,4 @@
-// CONTROLE DAS CONFIGURAÇÕES DOS DADOS (Quantidade, Tipo e Modificador)
+// CONTROLE DAS CONFIGURAÇÕES DOS DADOS (Quantidade, Tipo e Modificador) (lado Esquerdo)
 //Display da quantidade de dados
 let diceNumSlide = document.querySelector("#diceNumInput")
 let diceNumDisplay = document.querySelector("#diceNumDisplay")
@@ -62,7 +62,7 @@ rollModSlider.addEventListener("input" , () => {
     setRollInfo()
 })
 
-//FUNÇÃO PARA DISPLAY DA INFORMAÇÃO DA ROLAGEM
+//Display das informações de rolagem
 let rollInfoModDisplay = document.querySelector("#rollInfo-Mod") //Display 
 let rollInfo //Contém a informação da rolagem
 function setRollInfo() {
@@ -82,13 +82,79 @@ function setRollInfo() {
     rollInfoModDisplay.innerHTML = rollInfo
 }
 
-let rollBtn = document.querySelector("#rollDices")
-rollBtn.addEventListener("click" , () => {
-
+let resDisplayOptions = document.querySelectorAll("input[name='display-type']")
+let resDisplayType = 2
+resDisplayOptions.forEach(option =>{
+    option.addEventListener("input" , () => {
+        resDisplayType = Number(option.value)
+        displayResInDice(resDisplayType)
+    })
 })
 
+function displayResInDice(type) {
+    
+    switch(type) {
+        // Mostrar o menor valor
+        case 1:
+            diceResDisplay.innerHTML = Math.min(...rollRes) + rollModifier
+            break
+        // Mostra a soma dos valores
+        case 2:
+            let total = 0
+            for(res of rollRes){
+                total += res
+            }
+            diceResDisplay.innerHTML = total + rollModifier
+            break
+        //Mostra o maior valor
+        case 3:
+            diceResDisplay.innerHTML = Math.max(...rollRes) + rollModifier
+            break
+    }
 
+    if(rollRes.includes(diceType)){
+        diceResDisplay.style.setProperty("text-shadow" , "0px 0px 20px white")
+    }
+    else{
+        diceResDisplay.style.setProperty("text-shadow" , "0px 0px 15px var(--luz)")
+    }
+}
 
+// Botão para rolar dados
+let rollBtn = document.querySelector("#rollDices")
+rollBtn.addEventListener("click" , rollDices)
 
+let rollInfoDisplay = document.querySelector("#rollInfo") //Display dos dados rolados (Ex.: 1d20)
+let rollResDisplay = document.querySelector("#rollResults") //Display dos resultados das rolagens
+let dicesSound = document.querySelector("#dicesSfx") //Áduio do dado rolando
 
-let rollInfoDisplay = document.querySelector("#rollInfo")
+let diceResDisplay = document.querySelector("#dice-result-display") //Número que aparece no display de dado
+
+// Resultado das rolagens
+let rollRes = []
+
+//FUNÇÃO QUE ROLA OS DADOS (finalmente)
+function rollDices() {
+
+    dicesSound.currentTime = 0
+    dicesSound.play()
+    
+    rollRes = []
+
+    //Para cada número de dados, uma rolagem é feita e o resultado é integrado no rollRes
+    for(i = 1 ; i <= diceNum ; i++){
+        let aRoll = Math.floor((Math.random() * diceType) + 1) //De 1 até o número de faces do dado
+        rollRes.push(aRoll) //Adiciona o valor rolado ao rollRes
+    }
+
+    setRollInfo()
+
+    rollRes = rollRes.sort((a,b) => a-b) //Organizando os resultados em ordem crescente
+
+    rollInfoDisplay.innerHTML = `${rollInfo} -->`
+        
+    rollResDisplay.innerHTML = `${rollRes.join(" ")}` //Exibindo todos os resultados, substituindo a virgula (separador padrão de array) por um espaço
+
+    displayResInDice(resDisplayType)
+
+}
