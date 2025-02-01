@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-theme="light">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,6 @@
         :root{
             --colorHL: var(--rosa)
         }
-
-
     </style>
 </head>
 <body>
@@ -27,14 +25,14 @@
                 <!-- Seleção de Cor -->
                 <div class="theme-color">
                     <input type="radio" name="color" class="color-option" id="laranja" value="laranja">
-                    <input type="radio" name="color" class="color-option" id="rosa" value="rosa" checked>
+                    <input type="radio" name="color" class="color-option" id="rosa" value="rosa">
                     <input type="radio" name="color" class="color-option" id="roxo" value="roxo">
                     <input type="radio" name="color" class="color-option" id="verde" value="verde">
                 </div>
 
                 <!-- Seleção de Tema -->
                 <div class="theme-page">
-                    <input type="radio" name="theme" class="pagetheme-option" id="light" value="light" checked>
+                    <input type="radio" name="theme" class="pagetheme-option" id="light" value="light">
                     <input type="radio" name="theme" class="pagetheme-option" id="dark" value="dark">
                 </div>
             </section>
@@ -117,6 +115,7 @@
 
     <script src="components/script.js"></script>
     <script src="components/interface.js"></script>
+    <script src="components/storage.js"></script>
 
 </body>
 </html>
