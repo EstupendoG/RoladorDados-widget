@@ -33,6 +33,9 @@
     box-sizing: border-box;
     outline: none;
     border: none;
+
+    transition: 200ms ease-in-out;
+    transition: background-color 0ms;
 }
 
 body{
@@ -52,8 +55,7 @@ h1.page-title{
     text-transform: uppercase;
 }
 
-section.features-container{
-
+section#features-container{
     display: grid;
     grid-template-columns: 4fr 3fr;
     grid-template-rows: 2fr 1fr;
@@ -63,7 +65,7 @@ section.features-container{
     gap: 15px;
 }
 
-    section.features-container > section{
+    section#features-container > section{
         padding: 30px 45px;
 
         border-radius: 25px;
@@ -72,20 +74,25 @@ section.features-container{
     
         /* Títulos das Seções */
         .section-title{
+            margin-bottom: 20px;
+
             color: var(--colorTXT);
             font-size: 1.5em;
             font-family: var(--subFont);
             font-weight: 600;
         }
+        
+            .section-title#responsive-title{
+                display: none;
+            }
 
     /* Seção de Opções */
-    section.options-section{
+    section#options-section{
         grid-area: options;
     }      
 
         /* Opções de Cores e Tema */
         .theme-options{
-
             display: flex;
             justify-content: space-between;
 
@@ -232,7 +239,7 @@ section.features-container{
 
                 .slider-input-output{
                     display: grid;
-                    grid-template-columns: 7fr 1fr;
+                    grid-template-columns: 9fr 1fr;
                     align-items: center;
                     gap: 20px;
                 }
@@ -258,6 +265,21 @@ section.features-container{
                         box-shadow: 3px 3px 5px 1px var(--sombra);
 
                         cursor: w-resize;
+                        transition: background-color 200ms ease-in-out;
+                    }
+
+                    .slider-input::-moz-range-thumb{
+                        appearance: none;
+                        
+                        background-color: var(--colorHL);
+                        width: 25px;
+                        height: 25px;
+                        
+                        border-radius: 100px;
+                        box-shadow: 3px 3px 5px 1px var(--sombra);
+
+                        cursor: w-resize;
+                        transition: background-color 200ms ease-in-out;
                     }
 
                     .slider-count-display{
@@ -300,13 +322,14 @@ section.features-container{
                     font-weight: bolder;
                 }
 
-            button#rollDices{
+            a#rollDices{
                 background-color: var(--colorBG);
                 padding: 14px 50px;
 
                 color: var(--colorHL);
                 font-size: 1.3em;
                 font-family: var(--textFont);
+                text-decoration: none;
 
                 border-radius: 10px;
                 box-shadow: 3px 3px 15px 1px var(--sombra), inset 1px 1px 5px 1px var(--luz);
@@ -314,19 +337,13 @@ section.features-container{
                 cursor: pointer;
             }
 
-                button#rollDices:hover{
-                    background-color: var(--colorBG);
-                    padding: 14px 50px;
-                    
+                a#rollDices:hover{                    
                     transform: scale(1.03);
 
                     border-radius: 15px;
                 }
 
-                button#rollDices:active{
-                    background-color: var(--colorBG);
-                    padding: 14px 50px;
-                
+                a#rollDices:active{                
                     box-shadow: inset 3px 3px 6px 1px var(--sombra), 3px 3px 6px var(--luz);
 
                     filter: brightness(98%);
@@ -335,7 +352,7 @@ section.features-container{
                     
 
     /* Seção com Resultados das Rolagens */
-    section.results-section{
+    section#results-section{
         grid-area: results;
 
         display: flex;
@@ -344,7 +361,7 @@ section.features-container{
     }
 
         /* Opção do tipo de exibição (menor, soma ou maior) */
-        section.results-section .display-types{
+        section#results-section .display-types{
             padding: 10px;
 
             border-radius: 10px;
@@ -382,7 +399,7 @@ section.features-container{
                 }
 
         /* Display de dado customizado */
-        section.results-section .dice-display-container{
+        section#results-section .dice-display-container{
             margin-top: 25px;
             filter: drop-shadow(5px 5px 10px var(--sombra));
         }
@@ -400,7 +417,7 @@ section.features-container{
 
                 clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
 
-                transition: none;
+                transition: background-color 200ms ease-in-out;
             }
 
                 #dice-display #dice-result-display{
@@ -410,7 +427,7 @@ section.features-container{
                 }
 
         /* Disoplay de todos os resultados das rolagens */
-        section.results-section .roll-results{
+        section#results-section .roll-results{
             margin-top: 25px;
 
             display: flex;
@@ -435,6 +452,356 @@ section.features-container{
 
             
 
-    section.history-section{
+    section#history-section{
         grid-area: history;
     }   
+
+
+
+
+
+@media(max-width: 900px){
+    
+body{
+    padding: 20px 45px;
+}
+
+section#features-container{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas: 
+    'results'
+    'options'
+    'history';
+    gap: 25px;
+}
+
+    section#features-container > section{
+        padding: 30px 45px;
+    }
+    
+        /* Títulos das Seções */
+        .section-title{
+            margin-bottom: 35px;
+
+            font-size: 1.7em;
+            text-align: center;
+        }
+
+        .section-title#responsive-title{
+            display: block;
+        }
+
+    /* Seção de Opções */
+    section#options-section{
+
+    }
+
+        /* Opções de Cores e Tema */
+        .theme-options{
+            padding: 10px 20px;
+
+            box-shadow: 2px 2px 10px 1px var(--sombra), inset 2px 2px 5px var(--luz);
+        }
+
+        .theme-options input[type="radio"]::after{
+            width: 25px;
+            height: 25px;
+        }
+        
+            .theme-options input[type="radio"]:checked::after{
+                width: 20px;
+                height: 20px;
+            }
+
+            /* Seleção da Cor da Página */
+            .theme-color{
+                padding: 0px;
+
+                gap: 20px;
+
+                box-shadow: none !important;
+            }
+                
+            /* Seleção do Tema da Página */
+            .theme-page{
+                padding: 0px;
+
+                gap: 20px;
+
+                box-shadow: none !important;
+            }
+
+                        .pagetheme-option#light::after{
+                            font-size: 1.3em;
+                        }
+                        .pagetheme-option#dark::after{
+                            font-size: 1.3em;
+                        }
+
+        /* Opções de Rolagem */
+        section.dice-options{
+            margin-top: 35px;
+            
+            gap: 20px;
+        }
+
+                .slider-title{
+                    margin-bottom: 3px;
+
+                    font-size: 1.1em;
+                }
+
+                .slider-input-output{
+                    gap: 15px;
+                }
+
+                    .slider-input{
+                        height: 13px;
+                    }
+
+                    .slider-input::-webkit-slider-thumb{
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    .slider-input::-moz-range-thumb{
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    .slider-count-display{
+                        padding: 6px;
+                        
+                        font-size: 1.05em;
+                    }
+
+        /* Informações da Rolagem */
+        section.roll-info{
+            margin-top: 30px;
+
+            gap: 20px;
+        }
+
+            .roll-alert-text{
+                font-size: 1.15em;
+            }
+
+            a#rollDices{
+                padding: 12px 30px;
+
+                font-size: 1.2em;
+            }
+
+                a#rollDices:hover{                    
+                    transform: scale(1.01);
+                }
+
+                a#rollDices:active{
+                    transform: scale(0.97);
+                }
+                    
+
+    /* Seção com Resultados das Rolagens */
+    section#results-section{
+        padding: 10px 0px !important;
+
+        box-shadow: none !important;
+    }
+
+        /* Opção do tipo de exibição (menor, soma ou maior) */
+        section#results-section .display-types{
+            padding: 0px 13px;
+        }
+
+            label.display-types-label{
+                padding: 12px 10px;
+
+                font-size: 1.15em;
+            }
+
+                input[type="radio"].display-types-option:checked + label {
+                    transform: scale(1.02);
+                }
+
+        /* Display de dado customizado */
+        section#results-section .dice-display-container{
+            margin-top: 20px;
+        }
+
+            #dice-display{
+                width: 275px;
+                height: 275px;
+            }
+
+                #dice-display #dice-result-display{
+                    font-size: 5.5em;
+                }
+
+        /* Disoplay de todos os resultados das rolagens */
+        section#results-section .roll-results{
+            margin-top: 15px;
+
+            gap: 5px;
+
+            font-size: 1.15em;
+        }
+
+    section#history-section{
+        grid-area: history;
+    }   
+
+}
+
+@media(max-width: 550px){
+body{
+    padding: 20px;
+}
+
+section#features-container{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas: 
+    'results'
+    'options'
+    'history';
+    gap: 25px;
+}
+
+    section#features-container > section{
+        padding: 30px 35px;
+    }
+    
+        /* Títulos das Seções */
+        .section-title{
+            margin-bottom: 20px;
+
+            font-size: 1.4em;
+        }
+
+    /* Seção de Opções */
+    section#options-section{
+
+    }
+
+        /* Opções de Cores e Tema */
+        .theme-options{
+            padding: 8px 20px;
+
+            box-shadow: 2px 2px 10px 1px var(--sombra), inset 2px 2px 5px var(--luz);
+        }
+
+            /* Seleção da Cor da Página */
+            .theme-color{
+                gap: 15px;
+            }
+                
+            /* Seleção do Tema da Página */
+            .theme-page{
+                gap: 15px;
+            }
+
+                        .pagetheme-option#light::after{
+                            font-size: 1.05em;
+                        }
+                        .pagetheme-option#dark::after{
+                            font-size: 1.05em;
+                        }
+
+        /* Opções de Rolagem */
+        section.dice-options{
+            margin-top: 30px;
+            
+            gap: 17px;
+        }
+
+                .slider-title{
+                    margin-bottom: 2px;
+
+                    font-size: 1em;
+                }
+
+                .slider-input-output{
+                    grid-template-columns: 7fr 1fr;
+                    gap: 15px;
+                }
+
+                    .slider-input{
+                        height: 10px;
+                    }
+
+                    .slider-input::-webkit-slider-thumb{
+                        width: 17px;
+                        height: 17px;
+                    }
+
+                    .slider-input::-moz-range-thumb{
+                        width: 17px;
+                        height: 17px;
+                    }
+
+                    .slider-count-display{
+                        padding: 5px;
+                        
+                        font-size: 0.95em;
+                    }
+
+        /* Informações da Rolagem */
+        section.roll-info{
+            margin-top: 25px;
+
+            gap: 15px;
+        }
+
+            .roll-alert-text{
+                font-size: 1em;
+            }
+
+            a#rollDices{
+                padding: 10px 20px;
+
+                font-size: 1.05em;
+            }
+
+    /* Seção com Resultados das Rolagens */
+    section#results-section{
+        padding: 10px 0px !important;
+
+        box-shadow: none !important;
+    }
+
+        /* Opção do tipo de exibição (menor, soma ou maior) */
+            label.display-types-label{
+                padding: 12px 10px;
+
+                font-size: 1.1em;
+            }
+
+        /* Display de dado customizado */
+        section#results-section .dice-display-container{
+            margin-top: 20px;
+        }
+
+            #dice-display{
+                width: 250px;
+                height: 250px;
+            }
+
+                #dice-display #dice-result-display{
+                    font-size: 5.5em;
+                }
+
+        /* Disoplay de todos os resultados das rolagens */
+        section#results-section .roll-results{
+            margin-top: 15px;
+
+            gap: 5px;
+
+            font-size: 1.15em;
+        }
+
+    section#history-section{
+        grid-area: history;
+    }   
+
+}
