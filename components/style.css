@@ -292,7 +292,7 @@ section#features-container{
                         color: var(--colorTXT);
                         font-size: 1.15em;
                         font-family: var(--textFont);
-                        font-weight: 100;
+                        font-weight: 300;
 
                         border-radius: 5px;
                         box-shadow: 3px 3px 15px 1px var(--sombra), inset 1px 1px 5px var(--luz);
@@ -653,9 +653,13 @@ section#features-container{
 
 }
 
+
+
+
+
 @media(max-width: 550px){
 body{
-    padding: 20px;
+    padding: 15px;
 }
 
 section#features-container{
@@ -665,23 +669,23 @@ section#features-container{
     'results'
     'options'
     'history';
-    gap: 25px;
+    gap: 15px;
 }
 
     section#features-container > section{
-        padding: 30px 35px;
+        padding: 25px;
     }
     
         /* Títulos das Seções */
         .section-title{
             margin-bottom: 20px;
 
-            font-size: 1.4em;
+            font-size: 1.3em;
         }
 
     /* Seção de Opções */
     section#options-section{
-
+        margin-top: 30px;
     }
 
         /* Opções de Cores e Tema */
@@ -693,12 +697,12 @@ section#features-container{
 
             /* Seleção da Cor da Página */
             .theme-color{
-                gap: 15px;
+                gap: 13px;
             }
                 
             /* Seleção do Tema da Página */
             .theme-page{
-                gap: 15px;
+                gap: 13px;
             }
 
                         .pagetheme-option#light::after{
@@ -718,7 +722,7 @@ section#features-container{
                 .slider-title{
                     margin-bottom: 2px;
 
-                    font-size: 1em;
+                    font-size: 0.95em;
                 }
 
                 .slider-input-output{
@@ -743,24 +747,25 @@ section#features-container{
                     .slider-count-display{
                         padding: 5px;
                         
-                        font-size: 0.95em;
+                        font-size: 0.9em;
                     }
 
         /* Informações da Rolagem */
         section.roll-info{
-            margin-top: 25px;
+            margin-top: 20px;
 
-            gap: 15px;
+            gap: 10px;
         }
 
             .roll-alert-text{
-                font-size: 1em;
+                font-size: 0.95em;
             }
 
             a#rollDices{
-                padding: 10px 20px;
+                padding: 9px 14px;
 
-                font-size: 1.05em;
+                font-size: 1em;
+                font-weight: 500;
             }
 
     /* Seção com Resultados das Rolagens */
