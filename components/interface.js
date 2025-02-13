@@ -85,35 +85,37 @@ function displayResInDice() {
 // TROCAR O DISPLAY DE DADO
 const dDice = document.querySelector("#dice-display")
 function changeDice(diceType) {
+    //Retira o display de dado atual
+    dDice.classList.remove("d4-display", "d6-display", "d8-display", "d10-display", "d12-display", "d20-display", "d100-display");
     //Pega o tipo de dado para alterar o display de dado
     switch (Number(diceType.value)) {
         //d4 (triângulo)
         case 1:
-            dDice.style.setProperty("clip-path" , "polygon(50% 10%, 0% 85%, 100% 85%")
+            dDice.classList.add("d4-display")
             break
         //d6 (quadrado)
         case 2:
-            dDice.style.setProperty("clip-path" , "polygon(10% 10% , 90% 10%, 90% 90%, 10% 90%")
+            dDice.classList.add("d6-display")
             break
         //d8 (losângulo)
         case 3:
-            dDice.style.setProperty("clip-path" , "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)")
+            dDice.classList.add("d8-display")
             break
         //d10 (hexágono assimétrico)
         case 4:
-            dDice.style.setProperty("clip-path" , "polygon(50% 0%, 100% 40%, 100% 60%, 50% 100%, 0% 60%, 0% 40%)")
+            dDice.classList.add("d10-display")
             break
         //d12 (decágono)
         case 5:
-            dDice.style.setProperty("clip-path" , "polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%)")
+            dDice.classList.add("d12-display")
             break
         //d20 (hexágono)
         case 6:
-            dDice.style.setProperty("clip-path" , "polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%)")
+            dDice.classList.add("d20-display")
             break
         //d100 (círculo)
         case 7:
-            dDice.style.setProperty("clip-path" , "circle(50%)")
+            dDice.classList.add("d100-display")
             break
     }
 }
