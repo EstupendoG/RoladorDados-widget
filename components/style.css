@@ -345,7 +345,7 @@ section#features-container{
 @media(max-width: 900px){
     
 body{
-    padding: 20px 45px;
+    padding: 15px;
 }
 
     section#features-container > section{
