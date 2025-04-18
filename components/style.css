@@ -348,32 +348,10 @@ body{
     padding: 20px 45px;
 }
 
-section#features-container{
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, min-content);
-    grid-template-areas: 
-    'results'
-    'options'
-    'history';
-    gap: 25px;
-}
-
     section#features-container > section{
         padding: 30px 45px;
     }
     
-        /* Títulos das Seções */
-        .section-title{
-            margin-bottom: 35px;
-
-            font-size: 1.7em;
-            text-align: center;
-        }
-
-        .section-title#responsive-title{
-            display: block;
-        }
-
     /* Seção de Opções */
     section#options-section{
 
@@ -421,74 +399,10 @@ section#features-container{
                             font-size: 1.3em;
                         }
 
-        /* Opções de Rolagem */
-        section.dice-options{
-            margin-top: 35px;
-            
-            gap: 20px;
-        }
-
-                .slider-title{
-                    margin-bottom: 3px;
-
-                    font-size: 1.1em;
-                }
-
-                .slider-input-output{
-                    gap: 15px;
-                }
-
-                    .slider-input{
-                        height: 13px;
-                    }
-
-                    .slider-input::-webkit-slider-thumb{
-                        width: 20px;
-                        height: 20px;
-                    }
-
-                    .slider-input::-moz-range-thumb{
-                        width: 20px;
-                        height: 20px;
-                    }
-
-                    .slider-count-display{
-                        padding: 6px;
-                        
-                        font-size: 1.05em;
-                    }
-
-        /* Informações da Rolagem */
-        section.roll-info{
-            margin-top: 30px;
-
-            gap: 20px;
-        }
-
-            .roll-alert-text{
-                font-size: 1.15em;
-            }
-
-            a#rollDices{
-                padding: 12px 30px;
-
-                font-size: 1.2em;
-            }
-
-                a#rollDices:hover{                    
-                    transform: scale(1.01);
-                }
-
-                a#rollDices:active{
-                    transform: scale(0.97);
-                }
-                    
 
     /* Seção com Resultados das Rolagens */
     section#results-section{
-        padding: 10px 0px !important;
-
-        box-shadow: none !important;
+        padding: 20px 25px !important;
     }
 
         /* Opção do tipo de exibição (menor, soma ou maior) */
@@ -529,10 +443,6 @@ section#features-container{
             font-size: 1.15em;
         }
 
-    section#history-section{
-        grid-area: history;
-    }   
-
 }
 
 
@@ -545,12 +455,6 @@ body{
 }
 
 section#features-container{
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, min-content);
-    grid-template-areas: 
-    'results'
-    'options'
-    'history';
     gap: 15px;
 }
 
@@ -594,61 +498,7 @@ section#features-container{
                             font-size: 1.05em;
                         }
 
-        /* Opções de Rolagem */
-        section.dice-options{
-            margin-top: 30px;
-            
-            gap: 17px;
-        }
 
-                .slider-title{
-                    margin-bottom: 2px;
-
-                    font-size: 0.95em;
-                }
-
-                .slider-input-output{
-                    grid-template-columns: 7fr 1fr;
-                    gap: 15px;
-                }
-
-                    .slider-input{
-                        height: 10px;
-                    }
-
-                    .slider-input::-webkit-slider-thumb{
-                        width: 17px;
-                        height: 17px;
-                    }
-
-                    .slider-input::-moz-range-thumb{
-                        width: 17px;
-                        height: 17px;
-                    }
-
-                    .slider-count-display{
-                        padding: 5px;
-                        
-                        font-size: 0.9em;
-                    }
-
-        /* Informações da Rolagem */
-        section.roll-info{
-            margin-top: 20px;
-
-            gap: 10px;
-        }
-
-            .roll-alert-text{
-                font-size: 0.95em;
-            }
-
-            a#rollDices{
-                padding: 9px 14px;
-
-                font-size: 1em;
-                font-weight: 500;
-            }
 
     /* Seção com Resultados das Rolagens */
     section#results-section{
@@ -682,13 +532,9 @@ section#features-container{
         section#results-section .roll-results{
             margin-top: 15px;
 
-            gap: 5px;
+            gap: 3px;
 
-            font-size: 1.15em;
+            font-size: 1.05em;
         }
-
-    section#history-section{
-        grid-area: history;
-    }   
 
 }
