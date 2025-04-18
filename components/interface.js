@@ -52,23 +52,25 @@ iResType.forEach(option =>{
 //Função para exibir o resultado
 function displayResInDice(res , max) {
     //Exibe algo diferente de acordo com o tipo de exibição solicitado
-    switch(resType) {
-        // Mostrar o menor valor + modificador
-        case 1:
-            dDiceNumber.innerHTML = Math.min(...res)
-            break
-        // Mostra a soma dos valores + modificador
-        case 2:
-            let total = 0
-            for(r of res){
-                total += r
-            }
-            dDiceNumber.innerHTML = total
-            break
-        //Mostra o maior valor + modificador
-        case 3:
-            dDiceNumber.innerHTML = Math.max(...res)
-            break
+    if(rollRes.length){
+        switch(resType) {
+            // Mostrar o menor valor
+            case 1:
+                dDiceNumber.innerHTML = Math.min(...res)
+                break
+            // Mostra a soma dos valores
+            case 2:
+                let total = 0
+                for(r of res){
+                    total += r
+                }
+                dDiceNumber.innerHTML = total
+                break
+            //Mostra o maior valor
+            case 3:
+                dDiceNumber.innerHTML = Math.max(...res)
+                break
+        }
     }
 
     //Caso um dos resultados seja o valor máximo do dado, adiciona um brilho extra ao display
