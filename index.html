@@ -16,10 +16,10 @@
     <!-- <h1 class="page-title">Rolador de Dados</h1> -->
 
     <section id="features-container">
-        <!-- Opções de Customização para o Usuário -->
-        <section id="options-section">
-            <div id="responsive-title" class="section-title">Opções</div>
 
+        <!-- Seção de Resultados da Rolagem -->
+        <section id="results-section">
+             
             <!-- Customização de cores e tema -->
             <section class="theme-options">
                 <!-- Seleção de Cor -->
@@ -36,51 +36,6 @@
                     <input type="radio" name="theme" class="pagetheme-option" id="dark" value="dark">
                 </div>
             </section>
-
-            <!-- Customização da Rolagem de Dados -->
-            <section class="dice-options">
-                <!-- Definir quantidade de dados -->
-                <div class="slider-container">
-                    <h4 class="slider-title">Quantidade de Dados</h4>
-                    <div class="slider-input-output">
-                        <input type="range" class="slider-input" id="diceNumInput" min="1" max="10" step="1" value="1">
-                        <span class="slider-count-display" id="diceNumDisplay">1</span>
-                    </div>
-                </div>
-                
-                <!-- Definir tipo dos dados -->
-                <div class="slider-container">
-                    <h4 class="slider-title">Quantidade de Faces</h4>
-                    <div class="slider-input-output">
-                        <input type="range" class="slider-input" id="diceTypeInput" min="1" max="7" step="1" value="6">
-                        <span class="slider-count-display" id="diceTypeDisplay">20</span>
-                    </div>
-                </div>
-
-                <!-- Definir modificador de rolagem -->
-                <div class="slider-container">
-                    <h4 class="slider-title">Modificador</h4>
-                    <div class="slider-input-output">
-                        <input type="range" class="slider-input" id="rollModInput" min="-10" max="10" step="1">
-                        <span class="slider-count-display" id="rollModDisplay">0</span>
-                    </div>
-                </div>
-
-            </section>
-
-            <section class="roll-info">
-                <h4 class="roll-alert-text">
-                    Clique para rolar <span id="rollInfo-Mod">1d20</span>
-                </h4>
-
-                <a id="rollDices" href="#results-section">Rolar Dados</a>
-            </section>
-
-        </section>
-
-        <!-- Seção de Resultados da Rolagem -->
-        <section id="results-section">
-            <!-- <div class="section-title">Resultados</div> -->
             
             <!-- Seleção do tipo de exibição do resultado -->
             <div class="display-types">
@@ -94,6 +49,13 @@
                 <label for="maiorRes" class="display-types-label"> Maior </label>
             </div>
 
+            <!-- Display de todos os resultados da rolagem -->
+            <div class="roll-results">
+                <input type="text" placeholder="1d20..." id="rollInfo"> 
+                <p id="rollResults"> Resulados serão exibidos aqui</p>
+                <audio src="assets/sounds/dice-roll.mp3" id="dicesSfx"></audio>
+            </div>
+
              <!-- Dado :0 -->
             <div class="dice-display-container">
                 <div id="dice-display" class="d20-display">
@@ -101,28 +63,7 @@
                 </div>
             </div>
 
-            <!-- Display de todos os resultados da rolagem -->
-            <div class="roll-results">
-                <span id="rollInfo"> 1d20 </span> <p id="rollResults"> </p>
-                <audio src="assets/sounds/dice-roll.mp3" id="dicesSfx"></audio>
-            </div>
-        </section>
-
-        <section id="history-section">
-            <div class="section-title">Histórico</div>
-
-            <div class="history-logs">
-                <div class="history-log">
-                    <div class="hist-info">
-                        <p class="hist-roll"> 
-                            <span class="hist-roll-num">2</span> 
-                            <span class="hist-roll-dice d20-display">20</span> 
-                        </p> 
-                        <span class="hist-res">19, 20</span>
-                    </div>
-                    <p class="hist-time"> 3min</p>
-                </div>
-            </div>
+            
         </section>
     </section>
 
